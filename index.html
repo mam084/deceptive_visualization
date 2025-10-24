@@ -3,119 +3,51 @@
   <head>
     <meta charset="utf-8" />
     <title>Project 2 Report — Persuasive or Deceptive Visualization?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
       :root {
-        --color-neutral-95: hsl(220 10% 95%);
-        --color-neutral-90: hsl(220 10% 90%);
-        --color-neutral-80: hsl(220 10% 80%);
-        --color-neutral-70: hsl(220 10% 70%);
-        --color-neutral-60: hsl(220 10% 60%);
-        --color-neutral-50: hsl(220 10% 50%);
-        --color-neutral-40: hsl(220 10% 40%);
-        --color-neutral-30: hsl(220 10% 30%);
-        --color-neutral-20: hsl(220 10% 20%);
-        --color-neutral-10: hsl(220 10% 10%);
+        --bg: hsl(220 10% 95%);
+        --ink-1: hsl(220 10% 20%);
+        --ink-2: hsl(220 10% 40%);
+        --rule: hsl(220 10% 80%);
       }
-
-      html {
-        font: 100%/1.5 system-ui;
-        counter-reset: figure;
-        background: var(--color-neutral-95);
-        max-width: min(75vw, 80em);
-        margin: 0 auto;
-      }
-
-      /* Headings */
-
-      h1, h2, h3, h4, h5, h6 {
-        line-height: 1.1;
-        font-weight: 600;
-        text-wrap: balance;
-      }
-
-      h1, h2 {
-        border-bottom: 1px solid var(--color-neutral-80);
-        padding-bottom: 0.2em;
-      }
-
-      h1 {
-        margin-block: 1em 0.5rem;
-        font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
-        font-weight: 800;
-      }
-
+      html { font: 100%/1.5 system-ui; background: var(--bg); }
+      body { margin: 0 auto; max-width: min(80rem, 75vw); }
+      header { padding: 1.25rem 1rem; text-align: center; }
+      h1, h2, h3 { line-height: 1.1; margin: 0.6em 0 0.4em; color: var(--ink-1); }
+      h1 { font-size: clamp(2rem, 2.5vw + 1.5rem, 3.25rem); }
       h1 small {
-        display: block;
-        width: fit-content;
-        padding: 0.2em 0.5em;
-        margin-inline: auto;
-        color: white;
-        background: var(--color-neutral-40);
-        font-size: 40%;
-        text-transform: uppercase;
-        white-space: nowrap;
+        display: block; font-size: 0.45em; font-weight: 600; text-transform: uppercase;
+        letter-spacing: 0.04em; color: white; background: var(--ink-2);
+        width: fit-content; padding: 0.2em 0.55em; margin: 0.25rem auto 0;
       }
-
-      h2 {
-        font-size: 180%;
-        color: var(--color-neutral-30);
-      }
-
-      h3 { font-size: 130%; }
-
-      /* Lists */
-
-      ul, ol { padding-inline-start: 2em; }
-
-      li + li { margin-top: 0.2em; }
-
-      /* Sectioning elements */
-
-      header { padding-block: 1em; text-align: center; }
-
       main {
-        background: white;
-        color: var(--color-neutral-20);
-        border-radius: 1rem;
-        padding: 0.1rem 2rem;
+        background: white; color: var(--ink-1); border-radius: 1rem;
+        padding: 0.25rem 2rem 1.75rem; box-shadow: 0 0.35rem 1rem rgb(0 0 0 / 0.06);
       }
-
-      /* Figures */
-
+      section + section { margin-top: 1.5rem; }
+      h2 { border-bottom: 1px solid var(--rule); padding-bottom: 0.35rem; }
       figure {
-        margin: 1em 0;
-        padding: 0.5rem;
-        margin-inline: -0.5em;
-        border: 1px solid var(--color-neutral-80);
-        box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
-        text-align: center;
-        background: white;
+        margin: 1rem -0.5rem; border: 1px solid var(--rule);
+        padding: 0.5rem; background: white; text-align: center;
       }
-
-      figure > figcaption {
-        font: 500 75% var(--font-sans);
-        background: var(--color-neutral-95);
-        padding: 0.5rem;
-        margin: -0.5rem;
-        margin-top: 0.5rem;
-        counter-increment: figure;
-        text-align: left;
+      img { max-width: 100%; height: auto; }
+      figcaption {
+        margin-top: 0.5rem; padding: 0.5rem; background: #f7f7f9; text-align: left;
+        border-top: 1px solid var(--rule); font-size: 0.95rem;
       }
-
-      figure > figcaption::before {
-        content: 'Figure ' counter(figure) ': ';
-        font-weight: bold;
-        color: var(--color-neutral-40);
+      .decisions { margin: 0.75rem 0 0.25rem; padding-left: 1.2rem; }
+      .decisions li { margin: 0.4rem 0; }
+      .score {
+        display: inline-block; min-width: 3.5ch; text-align: center;
+        padding: 0.05rem 0.4rem; margin-right: 0.4rem; border-radius: 0.4rem;
+        font-weight: 700; font-variant-numeric: tabular-nums;
       }
-
-      figure > figcaption a:not(:hover, :focus, :active) {
-        color: inherit;
-        text-decoration: underline;
-        text-decoration-color: color-mix(in lab, currentColor, transparent 70%);
-      }
-
-      /* Footer note */
-      .note { font-size: 0.85rem; color: var(--color-neutral-40); }
+      .earnest { background: hsl(150 60% 92%); color: hsl(150 40% 25%); }
+      .deceptive { background: hsl(10 80% 92%); color: hsl(10 60% 30%); }
+      .neutral { background: hsl(220 15% 92%); color: hsl(220 25% 30%); }
+      .note { color: var(--ink-2); font-size: 0.95rem; }
+      footer { color: var(--ink-2); font-size: 0.9rem; padding: 0 2rem 1rem; }
     </style>
   </head>
 
@@ -125,65 +57,132 @@
         <small>Assignment 4</small>
         Persuasive or Deceptive Visualization?
       </h1>
-
       <p><strong>Matthew Mitchell</strong> — <em>mam084@ucsd.edu</em></p>
     </header>
 
     <main>
-      <h2>Proposition: The energy sector is not the primary driver of national emissions growth.</h2>
+      <!-- ================== Proposition ================== -->
+      <h2>Proposition</h2>
+      <p><strong>The energy sector is the primary driver of national emissions growth.</strong></p>
 
+      <!-- ================== FOR the proposition ================== -->
       <section>
-        <h3>FOR the Proposition</h3>
+        <h2>FOR the Proposition</h2>
+        <h3>Visualization A — “Energy and Manufacturing Lead Surge in Emissions”</h3>
 
         <figure>
-          <img src="images/Energy_vs_Total_Log.png" alt="Grouped bar chart comparing total vs. energy emissions for 2010, 2015, 2020, 2024 using a log-scaled y-axis." style="max-width:100%;height:auto" />
+          <img src="Energy_Group_Bar.png" alt="Sector-by-year grouped bar chart (2010, 2015, 2020, 2024) highlighting pronounced growth in Energy and Manufacturing." />
           <figcaption>
-            <strong>Energy’s share appears small relative to the total.</strong>
-            The log-scaled y-axis compresses the gap between years while keeping the energy bars visibly much shorter than the totals.
+            A wide, grouped bar chart shows noticeable growth in the Energy sector since 2010 relative to other sectors, visually supporting the claim that Energy drives national emissions growth.
           </figcaption>
         </figure>
 
-        <p>Design Decisions and Rationale:</p>
-
-        <ul>
-          <li><strong>Logarithmic y-axis</strong> deemphasizes absolute growth and stabilizes year-to-year variation, making energy look consistently small.</li>
-          <li><strong>Neutral palette</strong> (gray vs. orange) frames energy as a “subset” of a larger total rather than a focal problem.</li>
-          <li><strong>Conservative spacing and grid</strong> reinforce a steady, orderly narrative rather than change or volatility.</li>
+        <h3>Design decisions &amp; rationale</h3>
+        <ul class="decisions">
+          <li>
+            <span class="score deceptive">-1.0</span>
+            <strong>Tight y-limits with minimal padding.</strong>
+            Reducing headroom amplifies bar height differences year-over-year, making growth appear more dramatic without clipping data. I considered a full 0-baseline with generous padding, but it made changes look muted.
+          </li>
+          <li>
+            <span class="score earnest">+1.0</span>
+            <strong>Consistent sector ordering and grouped bars for 2010→2024.</strong>
+            This preserves comparability and reduces scanning load, helping viewers quickly spot the Energy trend. Alternatives like stacked bars obscured year-to-year growth.
+          </li>
+          <li>
+            <span class="score deceptive">-1.5</span>
+            <strong>Emphasis in title and caption.</strong>
+            The wording primes the audience to focus on Energy’s rise. A more neutral title (“GHG by Sector and Year”) was less persuasive.
+          </li>
+          <li>
+            <span class="score earnest">+1.0</span>
+            <strong>Uniform color set by year.</strong>
+            Keeping hues constant by year (instead of by sector) makes within-sector growth pop across time. Coloring sectors differently pulled attention sideways across categories instead of forward in time.
+          </li>
+          <li>
+            <span class="score deceptive">-0.5</span>
+            <strong>Wide aspect ratio.</strong>
+            Stretching horizontally increases separation between year groups and visually accentuates upward changes. A squarer canvas softened the effect.
+          </li>
         </ul>
       </section>
 
+      <!-- ================== AGAINST the proposition ================== -->
       <section>
-        <h3>AGAINST the Proposition</h3>
+        <h2>AGAINST the Proposition</h2>
+        <h3>Visualization B — “Energy’s Share of Total Emissions Has Stayed Consistently Low”</h3>
 
         <figure>
-          <img src="images/Energy_Group_Bar.png" alt="Sector-by-year grouped bar chart showing 2010, 2015, 2020, 2024 with notable growth in Energy and Manufacturing." style="max-width:100%;height:auto" />
+          <img src="Energy_vs_Total_Log.png" alt="Grouped bars comparing Total Emissions to Energy Emissions for 2010, 2015, 2020, 2024, drawn on a logarithmic y-axis to keep Energy visually small relative to totals." />
           <figcaption>
-            <strong>Energy and manufacturing lead growth across sectors.</strong>
-            Tight y-limits and a wide aspect ratio accentuate increases since 2010.
+            A grouped bar chart with a logarithmic y-axis compares Energy to the national total; Energy remains a small fraction in every year, arguing against the idea that Energy is the primary driver.
           </figcaption>
         </figure>
 
-        <p>Design Decisions and Rationale:</p>
-
-        <ul>
-          <li><strong>Tight y-range</strong> (no baseline padding) magnifies vertical differences across years within each sector.</li>
-          <li><strong>Consistent ordering</strong> of sectors and grouped bars makes upward trends easy to scan horizontally.</li>
-          <li><strong>Wider canvas</strong> increases separation of groups, helping growth bars stand out against earlier years.</li>
+        <h3>Design decisions &amp; rationale</h3>
+        <ul class="decisions">
+          <li>
+            <span class="score deceptive">-1.5</span>
+            <strong>Logarithmic y-axis.</strong>
+            Log scale compresses the space between large values and stabilizes variation, making Energy look proportionally small. A linear axis made the gap feel larger and less supportive of this claim.
+          </li>
+          <li>
+            <span class="score deceptive">-1.0</span>
+            <strong>Subdued color for totals; brighter accent for Energy.</strong>
+            Paradoxically, the accent draws the eye to small bars, reinforcing that they’re consistently much shorter than totals. A vivid color for totals would dominate attention.
+          </li>
+          <li>
+            <span class="score earnest">+0.5</span>
+            <strong>Side-by-side bars with identical category order.</strong>
+            This allows fair comparison across the same years. Alternatives like stacked bars hid absolute differences.
+          </li>
+          <li>
+            <span class="score deceptive">-0.5</span>
+            <strong>Calm grid and generous margins.</strong>
+            Extra whitespace and light gridlines reduce a sense of volatility. A cramped layout read as “busy” and emphasized fluctuations.
+          </li>
+          <li>
+            <span class="score earnest">+1.0</span>
+            <strong>Explicit legend (“Category”).</strong>
+            Clear labeling prevents confusion about which bars represent totals versus the subset, reducing accidental misreadings.
+          </li>
         </ul>
       </section>
 
+      <!-- ================== Final Reflection ================== -->
       <section>
         <h2>Final Reflection</h2>
         <p>
-          The two visuals tell conflicting stories with the same underlying data. The
-          first figure uses a log scale and subdued styling to convey that energy is a
-          modest contributor relative to totals, while the second figure uses tighter
-          bounds and layout to highlight sectoral growth—especially in energy and
-          manufacturing. This demonstrates how scaling and framing choices can push an
-          audience toward different conclusions without changing the numbers.
+          Designing persuasive visuals for both sides of a single proposition clarified how
+          framing, scale, and text steer interpretation even when the underlying data and encodings
+          remain reasonable. The “FOR” figure relied on layout and range choices that magnify
+          differences over time within a single sector, whereas the “AGAINST” figure leaned on a
+          logarithmic scale and calm styling to keep Energy in proportion to the national total.
+          Neither graphic fabricates data, yet each encourages a distinct conclusion.
         </p>
-        <p class="note">Place the PNG files in the same folder as this HTML file to load the images.</p>
+        <p>
+          The most straightforward steps were data transformation and consistent ordering; the
+          difficult parts were deciding how far to push scaling and titles without crossing into
+          obvious manipulation. I was surprised by how strongly canvas ratio and padding affected
+          perceived growth—small changes to whitespace can shift the narrative a lot, even before
+          axis edits or annotations.
+        </p>
+        <p>
+          I define ethical analysis and visualization as faithfully representing data and
+          uncertainty while choosing designs that are relevant to the question—and being candid
+          about consequential decisions. “Acceptable” persuasion clarifies a defensible reading of
+          the data (e.g., consistent grouping, clear legends, transparent transformations). What I
+          consider “misleading” is when scale choices, filtering, or loaded language obscure
+          materially important information a reasonable viewer would need to reach an informed
+          conclusion. The boundary is fuzzy, but intent plus disclosure—and the ease with which a
+          skeptical reader can recover the true scale—are key guardrails.
+        </p>
+        <p class="note">Place <code>Energy_Group_Bar.png</code> and <code>Energy_vs_Total_Log.png</code> alongside this HTML file so the images load.</p>
       </section>
     </main>
+
+    <footer>
+      <p>© 2025 Matthew Mitchell — For course use only.</p>
+    </footer>
   </body>
 </html>
