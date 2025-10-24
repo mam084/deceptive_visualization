@@ -54,7 +54,7 @@
   <body>
     <header>
       <h1>
-        <small>Assignment 4</small>
+        <small>Project 2</small>
         Persuasive or Deceptive Visualization?
       </h1>
       <p><strong>Matthew Mitchell</strong> — <em>mam084@ucsd.edu</em></p>
@@ -71,7 +71,7 @@
         <h3>Visualization A — “Energy and Manufacturing Lead Surge in Emissions”</h3>
 
         <figure>
-          <img src="Energy_Group_Bar.png" alt="Sector-by-year grouped bar chart (2010, 2015, 2020, 2024) highlighting pronounced growth in Energy and Manufacturing." />
+          <img src="images/Energy_Group_Bar.png" alt="Sector-by-year grouped bar chart (2010, 2015, 2020, 2024) highlighting pronounced growth in Energy and Manufacturing." />
           <figcaption>
             A wide, grouped bar chart shows noticeable growth in the Energy sector since 2010 relative to other sectors, visually supporting the claim that Energy drives national emissions growth.
           </figcaption>
@@ -87,12 +87,12 @@
           <li>
             <span class="score earnest">+1.0</span>
             <strong>Consistent sector ordering and grouped bars for 2010→2024.</strong>
-            This preserves comparability and reduces scanning load, helping viewers quickly spot the Energy trend. Alternatives like stacked bars obscured year-to-year growth.
+            This preserves comparability and reduces scanning load, helping viewers quickly spot the Energy trend. Alternatives like stacked bars obscured year-to-year growth and were very cluttered, reducing readability.
           </li>
           <li>
             <span class="score deceptive">-1.5</span>
             <strong>Emphasis in title and caption.</strong>
-            The wording primes the audience to focus on Energy’s rise. A more neutral title (“GHG by Sector and Year”) was less persuasive.
+            The wording primes the audience to focus on Energy’s rise. A more neutral title would be less persuasive.
           </li>
           <li>
             <span class="score earnest">+1.0</span>
@@ -102,7 +102,7 @@
           <li>
             <span class="score deceptive">-0.5</span>
             <strong>Wide aspect ratio.</strong>
-            Stretching horizontally increases separation between year groups and visually accentuates upward changes. A squarer canvas softened the effect.
+            Stretching horizontally increases separation between year groups and visually enhances upward changes. A squarer plot condenses the graph and reduces the visual difference.
           </li>
         </ul>
       </section>
@@ -113,9 +113,9 @@
         <h3>Visualization B — “Energy’s Share of Total Emissions Has Stayed Consistently Low”</h3>
 
         <figure>
-          <img src="Energy_vs_Total_Log.png" alt="Grouped bars comparing Total Emissions to Energy Emissions for 2010, 2015, 2020, 2024, drawn on a logarithmic y-axis to keep Energy visually small relative to totals." />
+          <img src="images/Energy_vs_Total_Log.png" alt="Grouped bars comparing Total Emissions to Energy Emissions for 2010, 2015, 2020, 2024, drawn on a logarithmic y-axis to keep Energy visually small relative to totals." />
           <figcaption>
-            A grouped bar chart with a logarithmic y-axis compares Energy to the national total; Energy remains a small fraction in every year, arguing against the idea that Energy is the primary driver.
+            A grouped bar chart with a logarithmic y-axis compares Energy to the national total. Energy remains a small fraction in every year, arguing against the idea that Energy is the primary driver.
           </figcaption>
         </figure>
 
@@ -124,10 +124,10 @@
           <li>
             <span class="score deceptive">-1.5</span>
             <strong>Logarithmic y-axis.</strong>
-            Log scale compresses the space between large values and stabilizes variation, making Energy look proportionally small. A linear axis made the gap feel larger and less supportive of this claim.
+            Log scale compresses the space between large values and stabilizes variation, making Energy look proportionally small. A linear axis made the gap feel smaller and less supportive of our claim.
           </li>
           <li>
-            <span class="score deceptive">-1.0</span>
+            <span class="score deceptive">-0.5</span>
             <strong>Subdued color for totals; brighter accent for Energy.</strong>
             Paradoxically, the accent draws the eye to small bars, reinforcing that they’re consistently much shorter than totals. A vivid color for totals would dominate attention.
           </li>
@@ -158,31 +158,29 @@
           remain reasonable. The “FOR” figure relied on layout and range choices that magnify
           differences over time within a single sector, whereas the “AGAINST” figure leaned on a
           logarithmic scale and calm styling to keep Energy in proportion to the national total.
-          Neither graphic fabricates data, yet each encourages a distinct conclusion.
+          Neither graphic fabricates data, but each one definitely encourages a distinct conclusion.
         </p>
         <p>
-          The most straightforward steps were data transformation and consistent ordering; the
+          The most straightforward steps were data transformation and consistent ordering. The
           difficult parts were deciding how far to push scaling and titles without crossing into
-          obvious manipulation. I was surprised by how strongly canvas ratio and padding affected
-          perceived growth—small changes to whitespace can shift the narrative a lot, even before
-          axis edits or annotations.
+          obvious manipulation. I was surprised by how strongly extending and padding axes affected
+          perceived growth. Small changes to whitespace can shift the narrative even before
+          scaling changes or annotations.
         </p>
         <p>
           I define ethical analysis and visualization as faithfully representing data and
-          uncertainty while choosing designs that are relevant to the question—and being candid
-          about consequential decisions. “Acceptable” persuasion clarifies a defensible reading of
-          the data (e.g., consistent grouping, clear legends, transparent transformations). What I
-          consider “misleading” is when scale choices, filtering, or loaded language obscure
-          materially important information a reasonable viewer would need to reach an informed
-          conclusion. The boundary is fuzzy, but intent plus disclosure—and the ease with which a
-          skeptical reader can recover the true scale—are key guardrails.
+          uncertainty while choosing designs that are relevant to the question and being candid
+          about consequential decisions. Acceptable persuasion is a truthful reading of
+          the data (e.g., consistent grouping, clear legends, and transparent transformations). What I
+          consider “misleading” is when scale choices, filtering, or loaded language intentionally hide
+          important information a reasonable viewer would need to reach an informed
+          conclusion. The boundary isn't exactly a solid line, but intent and disclosure are key pieces.
         </p>
-        <p class="note">Place <code>Energy_Group_Bar.png</code> and <code>Energy_vs_Total_Log.png</code> alongside this HTML file so the images load.</p>
       </section>
     </main>
 
     <footer>
-      <p>© 2025 Matthew Mitchell — For course use only.</p>
+      <p>2025 Matthew Mitchell</p>
     </footer>
   </body>
 </html>
